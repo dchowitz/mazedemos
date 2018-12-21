@@ -35,7 +35,7 @@ export default function grid (width: number, height: number, cellSize: number) {
   }))
 
   function neighbors (this: Cell) {
-    return [this.northern, this.southern, this.eastern, this.western].filter(i => !!i).map(i => cells[i])
+    return [this.northern, this.southern, this.eastern, this.western].filter(i => i !== undefined).map(i => cells[i])
   }
 
   function pixelToIndex (c: Point): number {

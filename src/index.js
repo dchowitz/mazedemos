@@ -7,12 +7,14 @@ import demoFrontier from './demoFrontier'
 import demoGrowth from './demoGrowth'
 import demoMaze from './demoMaze'
 import demoColorMaze from './demoColorMaze'
+import demoRandomDepthFirst from './demoRandomDepthFirst'
 
 const demos = [
   { demoFac: demoFrontier, name: 'frontier' },
   { demoFac: demoGrowth, name: 'growth' },
   { demoFac: demoMaze, name: 'maze' },
-  { demoFac: demoColorMaze, name: 'color-maze' }
+  { demoFac: demoColorMaze, name: 'color-maze' },
+  { demoFac: demoRandomDepthFirst, name: 'depth-first' }
 ]
 
 class App extends React.Component {
