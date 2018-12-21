@@ -7,7 +7,7 @@ interface DemoControllerProps {
   demoFac: (ctx: CanvasRenderingContext2D) => Demo
 }
 
-export default class DemoController extends React.Component<DemoControllerProps, { width: number; height: number }> {
+export default class DemoController extends React.Component<DemoControllerProps> {
   private _ctx: CanvasRenderingContext2D
   private _raf: number
   private _demo: Demo

@@ -25,8 +25,14 @@ export default class Canvas extends React.Component<CanvasProps> {
         height={this.props.height}
         ref={node => {
           if (node) {
-            if (!this.props.width) node.width = node.parentElement.offsetWidth
-            if (!this.props.height) node.height = node.parentElement.offsetHeight
+            const logoNode = document.getElementById('logo')
+
+            // if (!this.props.width) node.width = node.parentElement.offsetWidth
+            // if (!this.props.height) node.height = node.parentElement.offsetHeight
+
+            if (!this.props.width) node.width = logoNode.offsetWidth
+            if (!this.props.height) node.height = logoNode.offsetHeight
+
             this._offsetLeft = node.offsetLeft
             this._offsetTop = node.offsetTop
             this.props.contextAvailable(node.getContext('2d'))
