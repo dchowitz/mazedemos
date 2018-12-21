@@ -4,9 +4,9 @@ import grid, { Cell } from './grid'
 
 export default function demoMask (ctx: CanvasRenderingContext2D) {
   const { width, height } = ctx.canvas
-  const cellSize = 3
+  const cellSize = 4
   const halfCellSize = cellSize / 2
-  const pathWidth = 1.5
+  const pathWidth = 2
   const maze = grid(width, height, cellSize)
 
   const stack = [] as Cell[]
@@ -42,7 +42,8 @@ export default function demoMask (ctx: CanvasRenderingContext2D) {
 
     const nextCell = sample(current.neighbors().filter(n => !visited.has(n) && mask[n.idx]))
     if (nextCell) {
-      drawPath(current, nextCell, 'rgba(255, 255, 255, 0.5)')
+      // drawPath(current, nextCell, 'rgba(255, 255, 255, 0.5)')
+      drawPath(current, nextCell, 'lightgray')
       stack.push(nextCell)
       visited.add(nextCell)
     } else {
